@@ -43,7 +43,7 @@
     <h2>The full breakdown</h2>
     <div class="section-note section-note-split">
       <p class="desktop-only-line">Sortable — click a column header (or press <kbd>Enter</kbd> when focused) to reorder, click again to reverse.</p>
-      <p>Figures are full-year totals, not monthly: "Total data" is what you actually get across the whole 365 days, and "$/GB" is priced off the ongoing recharge, not the cheaper year-one rate.</p>
+      <p>Figures are full-year totals. "Total data" is what you actually get across the whole 365 days, and "$/GB" is priced off the ongoing recharge, not the cheaper year-one rate.</p>
     </div>
     <div class="mobile-sort-bar">
       <span class="sort-icon" aria-hidden="true">⇅</span>
@@ -96,7 +96,12 @@
             <th class="sortable" data-type="text"><span class="th-inner"><button class="sort-btn">Network<span class="sort-arrow" aria-hidden="true">↕</span></button></span></th>
             <th class="sortable" data-type="text"><span class="th-inner"><button class="sort-btn">Plan tier<span class="sort-arrow" aria-hidden="true">↕</span></button></span></th>
             <th class="sortable" data-type="num"><span class="th-inner"><button class="sort-btn">Total data<span class="sort-arrow" aria-hidden="true">↕</span></button></span></th>
-            <th class="sortable" data-type="num"><span class="th-inner"><button class="sort-btn">$/Month<span class="sort-arrow" aria-hidden="true">↕</span></button></span></th>
+            <th class="sortable" data-type="num">
+              <span class="th-inner">
+                <button class="sort-btn">$/Month<span class="sort-arrow" aria-hidden="true">↕</span></button>
+                <button type="button" class="info-btn" aria-describedby="tip-month">ⓘ<span class="tooltip-bubble" id="tip-month" role="tooltip">Based on the ongoing renew price ÷ 12, not the cheaper year-one promo rate — so it's what you'll actually pay per month from year two onward.</span></button>
+              </span>
+            </th>
             <th class="sortable" data-type="num"><span class="th-inner"><button class="sort-btn">Price (now → renew)<span class="sort-arrow" aria-hidden="true">↕</span></button></span></th>
             <th class="sortable" data-type="num"><span class="th-inner"><button class="sort-btn">$/GB<span class="sort-arrow" aria-hidden="true">↕</span></button></span></th>
             <th class="sortable" data-type="num">
