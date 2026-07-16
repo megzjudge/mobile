@@ -29,9 +29,9 @@ That's it — no npm install, no build command, nothing else to configure.
 
 1. Re-fetches each provider's icon from Google's favicon service.
 2. Compares it against the checked-in file in `logos/`.
-3. If anything differs, opens a PR (`chore/logo-refresh`) with the updated file(s) — it never pushes straight to `main`.
+3. If anything differs, commits the updated file(s) and pushes straight to `main` — no PR, no separate branch.
 
-**Heads up on the first run:** five of the fifteen logos (Kogan, Boost, Telstra, Telsim, Vodafone) were originally sourced by hand at higher resolution than Google's favicon service returns, so the very first scheduled run will likely open a PR "changing" those back down to the Google version. That's expected, not a sign anything broke — just close the PR without merging if you'd rather keep the higher-res originals, or merge it to standardize all 15 logos on the same source going forward.
+**Heads up on the first run:** five of the fifteen logos (Kogan, Boost, Telstra, Telsim, Vodafone) were originally sourced by hand at higher resolution than Google's favicon service returns, so the very first scheduled run will likely overwrite those with the lower-res Google version. That's expected, not a sign anything broke — if you'd rather keep the higher-res originals, either re-add them by hand afterward or edit `.github/scripts/check_logo_freshness.py` to skip those five keys.
 
 ## Updating the data later
 
