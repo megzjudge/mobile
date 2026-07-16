@@ -36,7 +36,7 @@ jobs:
               "## Also worth a fresh look",
               "",
               "- [ ] Any new provider entered the 365-day / long-expiry market since last time?",
-              "- [ ] Re-pull ProductReview and Trustpilot ratings for all 15 providers (scores/review counts do move).",
+              "- [ ] Re-pull Trustpilot ratings by hand for all 13 rated providers — this isn't automated, Trustpilot 403s on plain requests, unlike ProductReview which has its own monthly check (see `check-rating-freshness.yml`).",
               "- [ ] Re-check the \"ruled out\" list (Belong, Circles.Life, Moose Mobile, SpinTel, Gomo, Felix Mobile, Yomojo, Bendigo Telco) — still no long-expiry plan?",
               "- [ ] Spot-check Telsim and Konec (excluded from the ranked table for thin review data — see if that's changed).",
               "- [ ] Confirm \"$/Month\", \"$/GB\", and \"Price (now → renew)\" still reflect current ongoing pricing, not stale promo rates.",
