@@ -1,0 +1,53 @@
+name: Annual content review reminder
+
+on:
+  schedule:
+    - cron: '0 3 1 7 *'  # 03:00 UTC, 1 July every year
+  workflow_dispatch: {}
+
+permissions:
+  issues: write
+
+jobs:
+  open-review-issue:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const providers = [
+              "Kogan Mobile", "Amaysim", "Everyday Mobile", "Lycamobile",
+              "TeleChoice", "Boost Mobile", "ALDI Mobile", "Lebara Mobile",
+              "OnePass Mobile", "Coles Mobile", "Vodafone (direct)",
+              "Telstra (direct)", "Optus (direct)", "Telsim", "Konec Mobile"
+            ];
+            const checklist = providers
+              .map(p => `- [ ] ${p} — plan(s) still offered? price/data changed? new tiers added?`)
+              .join("\n");
+            const year = new Date().getFullYear();
+
+            const bodyLines = [
+              "It's been a year (or someone triggered this manually) — time to re-check the whole comparison for drift.",
+              "",
+              "## What to re-verify",
+              "",
+              checklist,
+              "",
+              "## Also worth a fresh look",
+              "",
+              "- [ ] Any new provider entered the 365-day / long-expiry market since last time?",
+              "- [ ] Re-pull ProductReview and Trustpilot ratings for all 15 providers (scores/review counts do move).",
+              "- [ ] Re-check the \"ruled out\" list (Belong, Circles.Life, Moose Mobile, SpinTel, Gomo, Felix Mobile, Yomojo, Bendigo Telco) — still no long-expiry plan?",
+              "- [ ] Spot-check Telsim and Konec (excluded from the ranked table for thin review data — see if that's changed).",
+              "- [ ] Confirm \"$/Month\", \"$/GB\", and \"Price (now → renew)\" still reflect current ongoing pricing, not stale promo rates.",
+              "",
+              `Close this issue once the data pass is done, or leave it open as a running to-do for the ${year} refresh.`
+            ];
+
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `📅 ${year} content review — re-check plans, pricing, and ratings`,
+              body: bodyLines.join("\n"),
+              assignees: [context.repo.owner],
+            });
