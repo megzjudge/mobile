@@ -1,0 +1,32 @@
+name: Check provider logo freshness
+
+on:
+  schedule:
+    - cron: '0 3 1 1,4,7,10 *'  # 03:00 UTC on the 1st of Jan/Apr/Jul/Oct
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  check-logos:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Re-fetch and compare provider logos
+        id: check
+        run: python3 .github/scripts/check_logo_freshness.py
+
+      - name: Commit and push straight to main if anything changed
+        if: steps.check.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add logos/
+          git commit -m "chore: refresh provider logos (${{ steps.check.outputs.changed_list }})"
+          git push
