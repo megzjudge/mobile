@@ -29,7 +29,7 @@ jobs:
           import time
           import urllib.request
 
-          SNAPSHOT_PATH = ".github/data/productreview-snapshot.json"
+          SNAPSHOT_PATH = "productreview-snapshot.json"
 
           # provider slug -> full name, matched against the ProductReview URL used in index.html
           PROVIDERS = {
@@ -88,7 +88,6 @@ jobs:
               else:
                   print(f"{name}: unchanged ({rating}★/{reviews})")
 
-          os.makedirs(os.path.dirname(SNAPSHOT_PATH), exist_ok=True)
           json.dump(new_snapshot, open(SNAPSHOT_PATH, "w"), indent=2, sort_keys=True)
           open(SNAPSHOT_PATH, "a").write("\n")
 
@@ -109,7 +108,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add .github/data/productreview-snapshot.json
+          git add productreview-snapshot.json
           git commit -m "chore: update ProductReview rating snapshot"
           git push
 
@@ -131,7 +130,7 @@ jobs:
               "",
               errors,
               "",
-              "The snapshot file (`.github/data/productreview-snapshot.json`) has already been updated and pushed. What hasn't been updated automatically: the rating pill's color class (good/warn/bad threshold), the accompanying rating-note prose in `index.html`, and the stat tiles at the top of the page if a \"best\"/\"lowest\" rating changed hands — those need a human pass."
+              "The snapshot file (`productreview-snapshot.json`) has already been updated and pushed. What hasn't been updated automatically: the rating pill's color class (good/warn/bad threshold), the accompanying rating-note prose in `index.html`, and the stat tiles at the top of the page if a \"best\"/\"lowest\" rating changed hands — those need a human pass."
             ];
             await github.rest.issues.create({
               owner: context.repo.owner,
