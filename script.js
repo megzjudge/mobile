@@ -3,7 +3,7 @@
   if (!table) return;
   var tbody = table.tBodies[0];
   var ths = Array.prototype.slice.call(table.querySelectorAll('thead th'));
-  var RATING_COL = 7; /* 0-indexed: Provider,Network,Tier,Data,Price,$/GB,Banking,Rating */
+  var RATING_COL = 8; /* 0-indexed: Provider,Network,Tier,Data,$/Month,Price,$/GB,Banking,Rating */
 
   var mobileQuery = window.matchMedia('(max-width: 860px)');
 
