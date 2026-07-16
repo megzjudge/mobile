@@ -583,7 +583,6 @@
     footer ul + h4.sources-head {
       margin-top: 36px;
       padding-top: 28px;
-      border-top: 1px solid var(--rule);
     }
   }
 
