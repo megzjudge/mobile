@@ -43,8 +43,8 @@
   <section>
     <h2>The full breakdown</h2>
     <div class="section-note section-note-split">
-      <p class="desktop-only-line">Sortable — click a column header (or press <kbd>Enter</kbd> when focused) to reorder, click again to reverse.</p>
-      <p>Figures are full-year totals. "Total data" is what you actually get across the whole 365 days, and "$/GB" is priced off the ongoing recharge, not the cheaper year-one rate.</p>
+      <p class="desktop-only-line">Sortable — click a column header to reorder, click again to reverse.</p>
+      <p>Figures are full-year totals. "Total data" is what you actually get across the whole 365 days, and "~$/GB/Month" is priced off the ongoing recharge, not the cheaper year-one rate.</p>
     </div>
     <div class="mobile-sort-bar">
       <span class="sort-icon" aria-hidden="true">⇅</span>
@@ -59,15 +59,11 @@
           <option value="1:text:asc">A → Z</option>
           <option value="1:text:desc">Z → A</option>
         </optgroup>
-        <optgroup label="Plan tier">
-          <option value="2:text:asc">A → Z</option>
-          <option value="2:text:desc">Z → A</option>
-        </optgroup>
         <optgroup label="Total data">
           <option value="3:num:desc">High → Low</option>
           <option value="3:num:asc">Low → High</option>
         </optgroup>
-        <optgroup label="~$/Month">
+        <optgroup label="~$/GB/Month">
           <option value="4:num:asc">Low → High</option>
           <option value="4:num:desc">High → Low</option>
         </optgroup>
@@ -95,12 +91,12 @@
           <tr>
             <th class="sortable" data-type="text"><span class="th-inner"><button class="sort-btn">Provider<span class="sort-arrow" aria-hidden="true">↕</span></button></span></th>
             <th class="sortable" data-type="text"><span class="th-inner"><button class="sort-btn">Network<span class="sort-arrow" aria-hidden="true">↕</span></button></span></th>
-            <th class="sortable" data-type="text"><span class="th-inner"><button class="sort-btn">Plan tier<span class="sort-arrow" aria-hidden="true">↕</span></button></span></th>
+            <th><span class="th-inner">Plan tier</span></th>
             <th class="sortable" data-type="num"><span class="th-inner"><button class="sort-btn">Total data<span class="sort-arrow" aria-hidden="true">↕</span></button></span></th>
             <th class="sortable" data-type="num">
               <span class="th-inner">
-                <button class="sort-btn">~$/Month<span class="sort-arrow" aria-hidden="true">↕</span></button>
-                <button type="button" class="info-btn" aria-describedby="tip-month">ⓘ<span class="tooltip-bubble" id="tip-month" role="tooltip">Based on the ongoing renew price ÷ 12, not the cheaper year-one promo rate — so it's what you'll actually pay per month from year two onward.</span></button>
+                <button class="sort-btn">~$/GB/Month<span class="sort-arrow" aria-hidden="true">↕</span></button>
+                <button type="button" class="info-btn" aria-describedby="tip-month">ⓘ<span class="tooltip-bubble" id="tip-month" role="tooltip">Ongoing renew price ÷ 12 (÷6 for the Telsim 180-day tier), paired with the average monthly data allowance — not the cheaper year-one promo rate.</span></button>
               </span>
             </th>
             <th class="sortable" data-type="num"><span class="th-inner"><button class="sort-btn">Price (now → renew)<span class="sort-arrow" aria-hidden="true">↕</span></button></span></th>
@@ -117,16 +113,41 @@
         <tbody>
 
           <tr>
+            <td class="provider-cell" data-value="Telsim"><div class="provider-inner"><span class="logo-chip"><img src="images/logos/telsim.png" alt="" loading="lazy"></span>
+              <span class="pname"><a class="pname-link" href="https://www.telsim.com.au/" target="_blank" rel="noopener">Telsim</a><a class="plan-link" href="https://www.telsim.com.au/product-category/180-365-days-plans/" target="_blank" rel="noopener">view plan</a></span></div></td>
+            <td data-value="Telstra"><span class="net-btn net-telstra-btn">Telstra</span></td>
+            <td data-value="180-Day">180-Day</td>
+            <td class="num" data-value="125">125GB</td>
+            <td class="money" data-value="36.67">$36.67/21GB</td>
+            <td class="money" data-value="220">$220 flat</td>
+            <td class="money" data-value="1.76">$1.76</td>
+            <td class="bank-cap good" data-value="1000">1000GB</td>
+            <td data-value="4.5"><div class="rating-box"><span class="rating-sources"><a class="rating-pill rating-good" href="https://www.productreview.com.au/listings/telsim" target="_blank" rel="noopener" title="ProductReview"><span class="src-tag">PR</span>4.5★ <span class="n">491</span></a><a class="rating-pill rating-good tp" href="https://www.trustpilot.com/review/telsim.com.au" target="_blank" rel="noopener" title="Trustpilot"><span class="src-tag">TP</span>4.3★ <span class="n">127</span></a></span><span class="rating-note">Strong on both fronts — one of the only providers with genuinely good, real reviews rather than just "least bad." Telstra coverage praised; online ID verification can be a hurdle for self-service activation.</span></div></td>
+          </tr>
+          <tr>
+            <td class="provider-cell" data-value="Telsim"><div class="provider-inner"><span class="logo-chip"><img src="images/logos/telsim.png" alt="" loading="lazy"></span>
+              <span class="pname"><a class="pname-link" href="https://www.telsim.com.au/" target="_blank" rel="noopener">Telsim</a><a class="plan-link" href="https://www.telsim.com.au/product-category/180-365-days-plans/" target="_blank" rel="noopener">view plan</a></span></div></td>
+            <td data-value="Telstra"><span class="net-btn net-telstra-btn">Telstra</span></td>
+            <td data-value="365-Day">365-Day</td>
+            <td class="num" data-value="260">260GB</td>
+            <td class="money" data-value="27.50">$27.50/22GB</td>
+            <td class="money" data-value="330">$330 flat</td>
+            <td class="money" data-value="1.27">$1.27</td>
+            <td class="bank-cap good" data-value="1000">1000GB</td>
+            <td data-value="4.5"><div class="rating-box"><span class="rating-sources"><a class="rating-pill rating-good" href="https://www.productreview.com.au/listings/telsim" target="_blank" rel="noopener" title="ProductReview"><span class="src-tag">PR</span>4.5★ <span class="n">491</span></a><a class="rating-pill rating-good tp" href="https://www.trustpilot.com/review/telsim.com.au" target="_blank" rel="noopener" title="Trustpilot"><span class="src-tag">TP</span>4.3★ <span class="n">127</span></a></span></div></td>
+          </tr>
+
+          <tr>
             <td class="provider-cell" data-value="Kogan Mobile"><div class="provider-inner"><span class="logo-chip"><img src="images/logos/kogan.png" alt="" loading="lazy"></span>
               <span class="pname"><a class="pname-link" href="https://www.koganmobile.com.au/" target="_blank" rel="noopener">Kogan Mobile</a><a class="plan-link" href="https://www.koganmobile.com.au/small-365-day-prepaid-plan/" target="_blank" rel="noopener">view plan</a></span></div></td>
             <td data-value="Vodafone"><span class="net-btn net-vodafone-btn">Vodafone</span></td>
             <td data-value="Small">Small</td>
             <td class="num" data-value="144">144GB</td>
-            <td class="money" data-value="14.99">$14.99</td>
+            <td class="money" data-value="14.99">$14.99/12GB</td>
             <td class="money" data-value="179.90">$179.90 flat</td>
             <td class="money" data-value="1.25">$1.25</td>
             <td class="bank-cap none" data-value="0">no rollover — 30-day blocks</td>
-            <td data-value="3.9"><div class="rating-box"><span class="rating-sources"><a class="rating-pill rating-good" href="https://www.productreview.com.au/listings/kogan-mobile" target="_blank" rel="noopener"><span class="src-tag">PR</span>3.9★ <span class="n">3,148</span></a><a class="rating-pill rating-bad tp" href="https://www.trustpilot.com/review/www.koganmobile.com.au" target="_blank" rel="noopener"><span class="src-tag">TP</span>1.7★ <span class="n">131</span></a></span><span class="rating-note">Best-rated of the group. Complaints cluster on cancellation/portal friction, not day-to-day service.</span></div></td>
+            <td data-value="3.9"><div class="rating-box"><span class="rating-sources"><a class="rating-pill rating-good" href="https://www.productreview.com.au/listings/kogan-mobile" target="_blank" rel="noopener" title="ProductReview"><span class="src-tag">PR</span>3.9★ <span class="n">3,148</span></a><a class="rating-pill rating-bad tp" href="https://www.trustpilot.com/review/www.koganmobile.com.au" target="_blank" rel="noopener" title="Trustpilot"><span class="src-tag">TP</span>1.7★ <span class="n">131</span></a></span><span class="rating-note">Best-rated of the group. Complaints cluster on cancellation/portal friction, not day-to-day service.</span></div></td>
           </tr>
           <tr>
             <td class="provider-cell" data-value="Kogan Mobile"><div class="provider-inner"><span class="logo-chip"><img src="images/logos/kogan.png" alt="" loading="lazy"></span>
@@ -134,11 +155,11 @@
             <td data-value="Vodafone"><span class="net-btn net-vodafone-btn">Vodafone</span></td>
             <td data-value="Medium">Medium</td>
             <td class="num" data-value="204">204GB</td>
-            <td class="money" data-value="15.83">$15.83</td>
+            <td class="money" data-value="15.83">$15.83/17GB</td>
             <td class="money" data-value="190">$159 → $190</td>
             <td class="money" data-value="0.93">$0.93</td>
             <td class="bank-cap none" data-value="0">no rollover — 30-day blocks</td>
-            <td data-value="3.9"><div class="rating-box"><span class="rating-sources"><a class="rating-pill rating-good" href="https://www.productreview.com.au/listings/kogan-mobile" target="_blank" rel="noopener"><span class="src-tag">PR</span>3.9★ <span class="n">3,148</span></a><a class="rating-pill rating-bad tp" href="https://www.trustpilot.com/review/www.koganmobile.com.au" target="_blank" rel="noopener"><span class="src-tag">TP</span>1.7★ <span class="n">131</span></a></span></div></td>
+            <td data-value="3.9"><div class="rating-box"><span class="rating-sources"><a class="rating-pill rating-good" href="https://www.productreview.com.au/listings/kogan-mobile" target="_blank" rel="noopener" title="ProductReview"><span class="src-tag">PR</span>3.9★ <span class="n">3,148</span></a><a class="rating-pill rating-bad tp" href="https://www.trustpilot.com/review/www.koganmobile.com.au" target="_blank" rel="noopener" title="Trustpilot"><span class="src-tag">TP</span>1.7★ <span class="n">131</span></a></span></div></td>
           </tr>
           <tr>
             <td class="provider-cell" data-value="Kogan Mobile"><div class="provider-inner"><span class="logo-chip"><img src="images/logos/kogan.png" alt="" loading="lazy"></span>
@@ -146,11 +167,11 @@
             <td data-value="Vodafone"><span class="net-btn net-vodafone-btn">Vodafone</span></td>
             <td data-value="Large">Large</td>
             <td class="num" data-value="300">300GB</td>
-            <td class="money" data-value="20.00">$20.00</td>
+            <td class="money" data-value="20.00">$20.00/25GB</td>
             <td class="money" data-value="240">$240 flat</td>
             <td class="money" data-value="0.80">$0.80</td>
             <td class="bank-cap none" data-value="0">no rollover — 30-day blocks</td>
-            <td data-value="3.9"><div class="rating-box"><span class="rating-sources"><a class="rating-pill rating-good" href="https://www.productreview.com.au/listings/kogan-mobile" target="_blank" rel="noopener"><span class="src-tag">PR</span>3.9★ <span class="n">3,148</span></a><a class="rating-pill rating-bad tp" href="https://www.trustpilot.com/review/www.koganmobile.com.au" target="_blank" rel="noopener"><span class="src-tag">TP</span>1.7★ <span class="n">131</span></a></span></div></td>
+            <td data-value="3.9"><div class="rating-box"><span class="rating-sources"><a class="rating-pill rating-good" href="https://www.productreview.com.au/listings/kogan-mobile" target="_blank" rel="noopener" title="ProductReview"><span class="src-tag">PR</span>3.9★ <span class="n">3,148</span></a><a class="rating-pill rating-bad tp" href="https://www.trustpilot.com/review/www.koganmobile.com.au" target="_blank" rel="noopener" title="Trustpilot"><span class="src-tag">TP</span>1.7★ <span class="n">131</span></a></span></div></td>
           </tr>
           <tr>
             <td class="provider-cell" data-value="Kogan Mobile"><div class="provider-inner"><span class="logo-chip"><img src="images/logos/kogan.png" alt="" loading="lazy"></span>
@@ -158,11 +179,11 @@
             <td data-value="Vodafone"><span class="net-btn net-vodafone-btn">Vodafone</span></td>
             <td data-value="Extra Large">Extra Large</td>
             <td class="num" data-value="504">504GB</td>
-            <td class="money" data-value="25.00">$25.00</td>
+            <td class="money" data-value="25.00">$25.00/42GB</td>
             <td class="money" data-value="300">$300 flat</td>
             <td class="money" data-value="0.60">$0.60</td>
             <td class="bank-cap none" data-value="0">no rollover — 30-day blocks</td>
-            <td data-value="3.9"><div class="rating-box"><span class="rating-sources"><a class="rating-pill rating-good" href="https://www.productreview.com.au/listings/kogan-mobile" target="_blank" rel="noopener"><span class="src-tag">PR</span>3.9★ <span class="n">3,148</span></a><a class="rating-pill rating-bad tp" href="https://www.trustpilot.com/review/www.koganmobile.com.au" target="_blank" rel="noopener"><span class="src-tag">TP</span>1.7★ <span class="n">131</span></a></span></div></td>
+            <td data-value="3.9"><div class="rating-box"><span class="rating-sources"><a class="rating-pill rating-good" href="https://www.productreview.com.au/listings/kogan-mobile" target="_blank" rel="noopener" title="ProductReview"><span class="src-tag">PR</span>3.9★ <span class="n">3,148</span></a><a class="rating-pill rating-bad tp" href="https://www.trustpilot.com/review/www.koganmobile.com.au" target="_blank" rel="noopener" title="Trustpilot"><span class="src-tag">TP</span>1.7★ <span class="n">131</span></a></span></div></td>
           </tr>
 
           <tr>
@@ -171,11 +192,11 @@
             <td data-value="Optus"><span class="net-btn net-optus-btn">Optus</span></td>
             <td data-value="200GB plan">200GB plan</td>
             <td class="num" data-value="204">204GB</td>
-            <td class="money" data-value="22.50">$22.50</td>
+            <td class="money" data-value="22.50">$22.50/17GB</td>
             <td class="money" data-value="270">$270 flat</td>
             <td class="money" data-value="1.32">$1.32</td>
             <td class="bank-cap unlim" data-value="999999">unlimited</td>
-            <td data-value="2.9"><div class="rating-box"><span class="rating-sources"><a class="rating-pill rating-warn" href="https://www.productreview.com.au/listings/amaysim" target="_blank" rel="noopener"><span class="src-tag">PR</span>2.9★ <span class="n">3,514</span></a><a class="rating-pill rating-bad tp" href="https://au.trustpilot.com/review/amaysim.com.au" target="_blank" rel="noopener"><span class="src-tag">TP</span>1.6★ <span class="n">180</span></a></span><span class="rating-note">Second-best rated. Unlimited data banking is the standout; activation/support are the weak points.</span></div></td>
+            <td data-value="2.9"><div class="rating-box"><span class="rating-sources"><a class="rating-pill rating-warn" href="https://www.productreview.com.au/listings/amaysim" target="_blank" rel="noopener" title="ProductReview"><span class="src-tag">PR</span>2.9★ <span class="n">3,514</span></a><a class="rating-pill rating-bad tp" href="https://au.trustpilot.com/review/amaysim.com.au" target="_blank" rel="noopener" title="Trustpilot"><span class="src-tag">TP</span>1.6★ <span class="n">180</span></a></span><span class="rating-note">Second-best rated. Unlimited data banking is the standout; activation/support are the weak points.</span></div></td>
           </tr>
           <tr>
             <td class="provider-cell" data-value="Amaysim"><div class="provider-inner"><span class="logo-chip"><img src="images/logos/amaysim.png" alt="" loading="lazy"></span>
@@ -183,11 +204,11 @@
             <td data-value="Optus"><span class="net-btn net-optus-btn">Optus</span></td>
             <td data-value="240GB plan">240GB plan</td>
             <td class="num" data-value="240">240GB</td>
-            <td class="money" data-value="26.67">$26.67</td>
+            <td class="money" data-value="26.67">$26.67/20GB</td>
             <td class="money" data-value="320">$199 → $320</td>
             <td class="money" data-value="1.33">$1.33</td>
             <td class="bank-cap unlim" data-value="999999">unlimited</td>
-            <td data-value="2.9"><div class="rating-box"><span class="rating-sources"><a class="rating-pill rating-warn" href="https://www.productreview.com.au/listings/amaysim" target="_blank" rel="noopener"><span class="src-tag">PR</span>2.9★ <span class="n">3,514</span></a><a class="rating-pill rating-bad tp" href="https://au.trustpilot.com/review/amaysim.com.au" target="_blank" rel="noopener"><span class="src-tag">TP</span>1.6★ <span class="n">180</span></a></span></div></td>
+            <td data-value="2.9"><div class="rating-box"><span class="rating-sources"><a class="rating-pill rating-warn" href="https://www.productreview.com.au/listings/amaysim" target="_blank" rel="noopener" title="ProductReview"><span class="src-tag">PR</span>2.9★ <span class="n">3,514</span></a><a class="rating-pill rating-bad tp" href="https://au.trustpilot.com/review/amaysim.com.au" target="_blank" rel="noopener" title="Trustpilot"><span class="src-tag">TP</span>1.6★ <span class="n">180</span></a></span></div></td>
           </tr>
 
           <tr>
@@ -196,11 +217,11 @@
             <td data-value="Telstra"><span class="net-btn net-telstra-btn">Telstra</span></td>
             <td data-value="Long-expiry 365d">Long-expiry 365d</td>
             <td class="num" data-value="300">~300GB</td>
-            <td class="money" data-value="26.67">$26.67</td>
+            <td class="money" data-value="26.67">$26.67/25GB</td>
             <td class="money" data-value="320">$320 flat<sup>†</sup></td>
             <td class="money" data-value="1.07">$1.07</td>
             <td class="bank-cap good" data-value="500">500GB — forfeited if you downgrade plans</td>
-            <td data-value="2.1"><div class="rating-box"><span class="rating-sources"><a class="rating-pill rating-bad" href="https://www.productreview.com.au/listings/everyday-mobile-from-woolworths" target="_blank" rel="noopener"><span class="src-tag">PR</span>2.1★ <span class="n">1,328</span></a><a class="rating-pill rating-missing tp" href="https://au.trustpilot.com/search?query=Everyday+Mobile" target="_blank" rel="noopener"><span class="src-tag">TP</span>0★ <span class="n">0</span></a></span><span class="rating-note">Formerly Woolworths Mobile. Activation delays reported up to ~2 months; support is chat-only.</span></div></td>
+            <td data-value="2.1"><div class="rating-box"><span class="rating-sources"><a class="rating-pill rating-bad" href="https://www.productreview.com.au/listings/everyday-mobile-from-woolworths" target="_blank" rel="noopener" title="ProductReview"><span class="src-tag">PR</span>2.1★ <span class="n">1,328</span></a><a class="rating-pill rating-missing tp" href="https://au.trustpilot.com/search?query=Everyday+Mobile" target="_blank" rel="noopener" title="Trustpilot"><span class="src-tag">TP</span>0★ <span class="n">0</span></a></span><span class="rating-note">Formerly Woolworths Mobile. Activation delays reported up to ~2 months; support is chat-only.</span></div></td>
           </tr>
 
           <tr>
@@ -209,11 +230,11 @@
             <td data-value="Vodafone"><span class="net-btn net-vodafone-btn">Vodafone</span></td>
             <td data-value="Medium">Medium</td>
             <td class="num" data-value="360">360GB</td>
-            <td class="money" data-value="20.00">$20.00</td>
+            <td class="money" data-value="20.00">$20.00/30GB</td>
             <td class="money" data-value="240">$150 → $240</td>
             <td class="money" data-value="0.67">$0.67</td>
             <td class="bank-cap good" data-value="500">500GB</td>
-            <td data-value="2.2"><div class="rating-box"><span class="rating-sources"><a class="rating-pill rating-bad" href="https://www.productreview.com.au/listings/lycamobile" target="_blank" rel="noopener"><span class="src-tag">PR</span>2.2★ <span class="n">1,683</span></a><a class="rating-pill rating-missing tp" href="https://au.trustpilot.com/search?query=Lycamobile" target="_blank" rel="noopener"><span class="src-tag">TP</span>0★ <span class="n">0</span></a></span><span class="rating-note">Best $/GB of any provider here. Support hold times reported near an hour; refund follow-up is patchy.</span></div></td>
+            <td data-value="2.2"><div class="rating-box"><span class="rating-sources"><a class="rating-pill rating-bad" href="https://www.productreview.com.au/listings/lycamobile" target="_blank" rel="noopener" title="ProductReview"><span class="src-tag">PR</span>2.2★ <span class="n">1,683</span></a><a class="rating-pill rating-missing tp" href="https://au.trustpilot.com/search?query=Lycamobile" target="_blank" rel="noopener" title="Trustpilot"><span class="src-tag">TP</span>0★ <span class="n">0</span></a></span><span class="rating-note">Best $/GB of any provider here. Support hold times reported near an hour; refund follow-up is patchy.</span></div></td>
           </tr>
           <tr>
             <td class="provider-cell" data-value="Lycamobile"><div class="provider-inner"><span class="logo-chip"><img src="images/logos/lyca.png" alt="" loading="lazy"></span>
@@ -221,11 +242,11 @@
             <td data-value="Vodafone"><span class="net-btn net-vodafone-btn">Vodafone</span></td>
             <td data-value="Large">Large</td>
             <td class="num" data-value="900">900GB</td>
-            <td class="money" data-value="40.00">$40.00</td>
+            <td class="money" data-value="40.00">$40.00/75GB</td>
             <td class="money" data-value="480">$220 → $480</td>
             <td class="money" data-value="0.53">$0.53</td>
             <td class="bank-cap good" data-value="500">500GB</td>
-            <td data-value="2.2"><div class="rating-box"><span class="rating-sources"><a class="rating-pill rating-bad" href="https://www.productreview.com.au/listings/lycamobile" target="_blank" rel="noopener"><span class="src-tag">PR</span>2.2★ <span class="n">1,683</span></a><a class="rating-pill rating-missing tp" href="https://au.trustpilot.com/search?query=Lycamobile" target="_blank" rel="noopener"><span class="src-tag">TP</span>0★ <span class="n">0</span></a></span></div></td>
+            <td data-value="2.2"><div class="rating-box"><span class="rating-sources"><a class="rating-pill rating-bad" href="https://www.productreview.com.au/listings/lycamobile" target="_blank" rel="noopener" title="ProductReview"><span class="src-tag">PR</span>2.2★ <span class="n">1,683</span></a><a class="rating-pill rating-missing tp" href="https://au.trustpilot.com/search?query=Lycamobile" target="_blank" rel="noopener" title="Trustpilot"><span class="src-tag">TP</span>0★ <span class="n">0</span></a></span></div></td>
           </tr>
 
           <tr>
@@ -234,11 +255,11 @@
             <td data-value="Telstra"><span class="net-btn net-telstra-btn">Telstra</span></td>
             <td data-value="$269 plan">$269 plan</td>
             <td class="num" data-value="216">216GB</td>
-            <td class="money" data-value="22.42">$22.42</td>
+            <td class="money" data-value="22.42">$22.42/18GB</td>
             <td class="money" data-value="269">$269 flat</td>
             <td class="money" data-value="1.25">$1.25</td>
             <td class="bank-cap good" data-value="200">200GB</td>
-            <td data-value="2.2"><div class="rating-box"><span class="rating-sources"><a class="rating-pill rating-bad" href="https://www.productreview.com.au/listings/telechoice-mobile" target="_blank" rel="noopener"><span class="src-tag">PR</span>2.2★ <span class="n">71</span></a><a class="rating-pill rating-bad tp" href="https://www.trustpilot.com/review/telechoice.com.au" target="_blank" rel="noopener"><span class="src-tag">TP</span>1.4★ <span class="n">192</span></a></span><span class="rating-note">Vendor's own widget shows 4.8★/1,406 — a curated score, not comparable to ProductReview's open sample.</span></div></td>
+            <td data-value="2.2"><div class="rating-box"><span class="rating-sources"><a class="rating-pill rating-bad" href="https://www.productreview.com.au/listings/telechoice-mobile" target="_blank" rel="noopener" title="ProductReview"><span class="src-tag">PR</span>2.2★ <span class="n">71</span></a><a class="rating-pill rating-bad tp" href="https://www.trustpilot.com/review/telechoice.com.au" target="_blank" rel="noopener" title="Trustpilot"><span class="src-tag">TP</span>1.4★ <span class="n">192</span></a></span><span class="rating-note">Vendor's own widget shows 4.8★/1,406 — a curated score, not comparable to ProductReview's open sample.</span></div></td>
           </tr>
 
           <tr>
@@ -247,11 +268,11 @@
             <td data-value="Telstra"><span class="net-btn net-telstra-btn">Telstra</span></td>
             <td data-value="$300 Long Expiry">$300 Long Expiry</td>
             <td class="num" data-value="300">300GB</td>
-            <td class="money" data-value="25.00">$25.00</td>
+            <td class="money" data-value="25.00">$25.00/25GB</td>
             <td class="money" data-value="300">$300 flat</td>
             <td class="money" data-value="1.00">$1.00</td>
             <td class="bank-cap none" data-value="0">no rollover on long-expiry</td>
-            <td data-value="1.9"><div class="rating-box"><span class="rating-sources"><a class="rating-pill rating-bad" href="https://www.productreview.com.au/listings/boost-mobile" target="_blank" rel="noopener"><span class="src-tag">PR</span>1.9★ <span class="n">1,683</span></a><a class="rating-pill rating-bad tp" href="https://www.trustpilot.com/review/boost.com.au" target="_blank" rel="noopener"><span class="src-tag">TP</span>1.6★ <span class="n">100</span></a></span><span class="rating-note">Full Telstra network is praised; activation flow and billing/support access are the recurring failure points.</span></div></td>
+            <td data-value="1.9"><div class="rating-box"><span class="rating-sources"><a class="rating-pill rating-bad" href="https://www.productreview.com.au/listings/boost-mobile" target="_blank" rel="noopener" title="ProductReview"><span class="src-tag">PR</span>1.9★ <span class="n">1,683</span></a><a class="rating-pill rating-bad tp" href="https://www.trustpilot.com/review/boost.com.au" target="_blank" rel="noopener" title="Trustpilot"><span class="src-tag">TP</span>1.6★ <span class="n">100</span></a></span><span class="rating-note">Full Telstra network is praised; activation flow and billing/support access are the recurring failure points.</span></div></td>
           </tr>
           <tr>
             <td class="provider-cell" data-value="Boost Mobile"><div class="provider-inner"><span class="logo-chip"><img src="images/logos/boost.png" alt="" loading="lazy"></span>
@@ -259,11 +280,11 @@
             <td data-value="Telstra"><span class="net-btn net-telstra-btn">Telstra</span></td>
             <td data-value="$365 Long Expiry">$365 Long Expiry</td>
             <td class="num" data-value="365">365GB</td>
-            <td class="money" data-value="30.42">$30.42</td>
+            <td class="money" data-value="30.42">$30.42/30GB</td>
             <td class="money" data-value="365">$365 flat</td>
             <td class="money" data-value="1.00">$1.00</td>
             <td class="bank-cap none" data-value="0">no rollover on long-expiry</td>
-            <td data-value="1.9"><div class="rating-box"><span class="rating-sources"><a class="rating-pill rating-bad" href="https://www.productreview.com.au/listings/boost-mobile" target="_blank" rel="noopener"><span class="src-tag">PR</span>1.9★ <span class="n">1,683</span></a><a class="rating-pill rating-bad tp" href="https://www.trustpilot.com/review/boost.com.au" target="_blank" rel="noopener"><span class="src-tag">TP</span>1.6★ <span class="n">100</span></a></span></div></td>
+            <td data-value="1.9"><div class="rating-box"><span class="rating-sources"><a class="rating-pill rating-bad" href="https://www.productreview.com.au/listings/boost-mobile" target="_blank" rel="noopener" title="ProductReview"><span class="src-tag">PR</span>1.9★ <span class="n">1,683</span></a><a class="rating-pill rating-bad tp" href="https://www.trustpilot.com/review/boost.com.au" target="_blank" rel="noopener" title="Trustpilot"><span class="src-tag">TP</span>1.6★ <span class="n">100</span></a></span></div></td>
           </tr>
 
           <tr>
@@ -272,11 +293,11 @@
             <td data-value="Telstra"><span class="net-btn net-telstra-btn">Telstra</span></td>
             <td data-value="5G Long Life">5G Long Life</td>
             <td class="num" data-value="300">300GB</td>
-            <td class="money" data-value="24.08">$24.08</td>
+            <td class="money" data-value="24.08">$24.08/25GB</td>
             <td class="money" data-value="289">$289 flat</td>
             <td class="money" data-value="0.96">$0.96</td>
             <td class="bank-cap unlim" data-value="999999">unlimited if renewed within 24h of expiry</td>
-            <td data-value="1.9"><div class="rating-box"><span class="rating-sources"><a class="rating-pill rating-bad" href="https://www.productreview.com.au/listings/aldi-mobile" target="_blank" rel="noopener"><span class="src-tag">PR</span>1.9★ <span class="n">2,298</span></a><a class="rating-pill rating-bad tp" href="https://www.trustpilot.com/review/aldimobile.com.au" target="_blank" rel="noopener"><span class="src-tag">TP</span>2.0★ <span class="n">76</span></a></span><span class="rating-note">Telstra coverage is the draw; the offshore call centre is the #1 complaint by a wide margin.</span></div></td>
+            <td data-value="1.9"><div class="rating-box"><span class="rating-sources"><a class="rating-pill rating-bad" href="https://www.productreview.com.au/listings/aldi-mobile" target="_blank" rel="noopener" title="ProductReview"><span class="src-tag">PR</span>1.9★ <span class="n">2,298</span></a><a class="rating-pill rating-bad tp" href="https://www.trustpilot.com/review/aldimobile.com.au" target="_blank" rel="noopener" title="Trustpilot"><span class="src-tag">TP</span>2.0★ <span class="n">76</span></a></span><span class="rating-note">Telstra coverage is the draw; the offshore call centre is the #1 complaint by a wide margin.</span></div></td>
           </tr>
 
           <tr>
@@ -285,11 +306,11 @@
             <td data-value="Vodafone"><span class="net-btn net-vodafone-btn">Vodafone</span></td>
             <td data-value="$200 SIM">$200 SIM</td>
             <td class="num" data-value="180">180GB</td>
-            <td class="money" data-value="16.67">$16.67</td>
+            <td class="money" data-value="16.67">$16.67/15GB</td>
             <td class="money" data-value="200">$200 flat</td>
             <td class="money" data-value="1.11">$1.11</td>
             <td class="bank-cap good" data-value="500">500GB</td>
-            <td data-value="1.9"><div class="rating-box"><span class="rating-sources"><a class="rating-pill rating-bad" href="https://www.productreview.com.au/listings/lebara-mobile" target="_blank" rel="noopener"><span class="src-tag">PR</span>1.9★ <span class="n">772</span></a><a class="rating-pill rating-bad tp" href="https://www.trustpilot.com/review/lebara.com.au" target="_blank" rel="noopener"><span class="src-tag">TP</span>1.5★ <span class="n">74</span></a></span><span class="rating-note">Activation failures and fast-draining data are the top complaints, plus long 1300-line waits.</span></div></td>
+            <td data-value="1.9"><div class="rating-box"><span class="rating-sources"><a class="rating-pill rating-bad" href="https://www.productreview.com.au/listings/lebara-mobile" target="_blank" rel="noopener" title="ProductReview"><span class="src-tag">PR</span>1.9★ <span class="n">772</span></a><a class="rating-pill rating-bad tp" href="https://www.trustpilot.com/review/lebara.com.au" target="_blank" rel="noopener" title="Trustpilot"><span class="src-tag">TP</span>1.5★ <span class="n">74</span></a></span><span class="rating-note">Activation failures and fast-draining data are the top complaints, plus long 1300-line waits.</span></div></td>
           </tr>
           <tr>
             <td class="provider-cell" data-value="Lebara Mobile"><div class="provider-inner"><span class="logo-chip"><img src="images/logos/lebara.png" alt="" loading="lazy"></span>
@@ -297,11 +318,11 @@
             <td data-value="Vodafone"><span class="net-btn net-vodafone-btn">Vodafone</span></td>
             <td data-value="$250 SIM">$250 SIM</td>
             <td class="num" data-value="264">264GB</td>
-            <td class="money" data-value="20.83">$20.83</td>
+            <td class="money" data-value="20.83">$20.83/22GB</td>
             <td class="money" data-value="250">$179 → $250</td>
             <td class="money" data-value="0.95">$0.95</td>
             <td class="bank-cap good" data-value="500">500GB</td>
-            <td data-value="1.9"><div class="rating-box"><span class="rating-sources"><a class="rating-pill rating-bad" href="https://www.productreview.com.au/listings/lebara-mobile" target="_blank" rel="noopener"><span class="src-tag">PR</span>1.9★ <span class="n">772</span></a><a class="rating-pill rating-bad tp" href="https://www.trustpilot.com/review/lebara.com.au" target="_blank" rel="noopener"><span class="src-tag">TP</span>1.5★ <span class="n">74</span></a></span></div></td>
+            <td data-value="1.9"><div class="rating-box"><span class="rating-sources"><a class="rating-pill rating-bad" href="https://www.productreview.com.au/listings/lebara-mobile" target="_blank" rel="noopener" title="ProductReview"><span class="src-tag">PR</span>1.9★ <span class="n">772</span></a><a class="rating-pill rating-bad tp" href="https://www.trustpilot.com/review/lebara.com.au" target="_blank" rel="noopener" title="Trustpilot"><span class="src-tag">TP</span>1.5★ <span class="n">74</span></a></span></div></td>
           </tr>
           <tr>
             <td class="provider-cell" data-value="Lebara Mobile"><div class="provider-inner"><span class="logo-chip"><img src="images/logos/lebara.png" alt="" loading="lazy"></span>
@@ -309,11 +330,11 @@
             <td data-value="Vodafone"><span class="net-btn net-vodafone-btn">Vodafone</span></td>
             <td data-value="$300 SIM">$300 SIM</td>
             <td class="num" data-value="420">420GB</td>
-            <td class="money" data-value="25.00">$25.00</td>
+            <td class="money" data-value="25.00">$25.00/35GB</td>
             <td class="money" data-value="300">$300 flat</td>
             <td class="money" data-value="0.71">$0.71</td>
             <td class="bank-cap good" data-value="500">500GB</td>
-            <td data-value="1.9"><div class="rating-box"><span class="rating-sources"><a class="rating-pill rating-bad" href="https://www.productreview.com.au/listings/lebara-mobile" target="_blank" rel="noopener"><span class="src-tag">PR</span>1.9★ <span class="n">772</span></a><a class="rating-pill rating-bad tp" href="https://www.trustpilot.com/review/lebara.com.au" target="_blank" rel="noopener"><span class="src-tag">TP</span>1.5★ <span class="n">74</span></a></span></div></td>
+            <td data-value="1.9"><div class="rating-box"><span class="rating-sources"><a class="rating-pill rating-bad" href="https://www.productreview.com.au/listings/lebara-mobile" target="_blank" rel="noopener" title="ProductReview"><span class="src-tag">PR</span>1.9★ <span class="n">772</span></a><a class="rating-pill rating-bad tp" href="https://www.trustpilot.com/review/lebara.com.au" target="_blank" rel="noopener" title="Trustpilot"><span class="src-tag">TP</span>1.5★ <span class="n">74</span></a></span></div></td>
           </tr>
 
           <tr>
@@ -322,11 +343,11 @@
             <td data-value="Optus"><span class="net-btn net-optus-btn">Optus</span></td>
             <td data-value="200GB plan">200GB plan</td>
             <td class="num" data-value="200">200GB</td>
-            <td class="money" data-value="16.67">$16.67</td>
+            <td class="money" data-value="16.67">$16.67/17GB</td>
             <td class="money" data-value="200">$200 flat</td>
             <td class="money" data-value="1.00">$1.00</td>
-            <td class="bank-cap none" data-value="0">no rollover (confirmed)</td>
-            <td data-value="1.7"><div class="rating-box"><span class="rating-sources"><a class="rating-pill rating-bad" href="https://www.productreview.com.au/listings/onepass-mobile" target="_blank" rel="noopener"><span class="src-tag">PR</span>1.7★ <span class="n">372</span></a><a class="rating-pill rating-missing tp" href="https://au.trustpilot.com/search?query=OnePass+Mobile" target="_blank" rel="noopener"><span class="src-tag">TP</span>0★ <span class="n">0</span></a></span><span class="rating-note">Weakest signal-quality complaints of any provider here; support described as ending chats when issues are raised.</span></div></td>
+            <td class="bank-cap none" data-value="0">no rollover</td>
+            <td data-value="1.7"><div class="rating-box"><span class="rating-sources"><a class="rating-pill rating-bad" href="https://www.productreview.com.au/listings/onepass-mobile" target="_blank" rel="noopener" title="ProductReview"><span class="src-tag">PR</span>1.7★ <span class="n">372</span></a><a class="rating-pill rating-missing tp" href="https://au.trustpilot.com/search?query=OnePass+Mobile" target="_blank" rel="noopener" title="Trustpilot"><span class="src-tag">TP</span>0★ <span class="n">0</span></a></span><span class="rating-note">Weakest signal-quality complaints of any provider here; support described as ending chats when issues are raised.</span></div></td>
           </tr>
           <tr>
             <td class="provider-cell" data-value="OnePass Mobile"><div class="provider-inner"><span class="logo-chip"><img src="images/logos/onepass.png" alt="" loading="lazy"></span>
@@ -334,11 +355,11 @@
             <td data-value="Optus"><span class="net-btn net-optus-btn">Optus</span></td>
             <td data-value="280GB plan">280GB plan</td>
             <td class="num" data-value="280">280GB</td>
-            <td class="money" data-value="20.83">$20.83</td>
+            <td class="money" data-value="20.83">$20.83/23GB</td>
             <td class="money" data-value="250">$250 flat</td>
             <td class="money" data-value="0.89">$0.89</td>
-            <td class="bank-cap none" data-value="0">no rollover (confirmed)</td>
-            <td data-value="1.7"><div class="rating-box"><span class="rating-sources"><a class="rating-pill rating-bad" href="https://www.productreview.com.au/listings/onepass-mobile" target="_blank" rel="noopener"><span class="src-tag">PR</span>1.7★ <span class="n">372</span></a><a class="rating-pill rating-missing tp" href="https://au.trustpilot.com/search?query=OnePass+Mobile" target="_blank" rel="noopener"><span class="src-tag">TP</span>0★ <span class="n">0</span></a></span></div></td>
+            <td class="bank-cap none" data-value="0">no rollover</td>
+            <td data-value="1.7"><div class="rating-box"><span class="rating-sources"><a class="rating-pill rating-bad" href="https://www.productreview.com.au/listings/onepass-mobile" target="_blank" rel="noopener" title="ProductReview"><span class="src-tag">PR</span>1.7★ <span class="n">372</span></a><a class="rating-pill rating-missing tp" href="https://au.trustpilot.com/search?query=OnePass+Mobile" target="_blank" rel="noopener" title="Trustpilot"><span class="src-tag">TP</span>0★ <span class="n">0</span></a></span></div></td>
           </tr>
 
           <tr>
@@ -347,11 +368,11 @@
             <td data-value="Optus"><span class="net-btn net-optus-btn">Optus</span></td>
             <td data-value="$220 plan">$220 plan</td>
             <td class="num" data-value="180">180GB</td>
-            <td class="money" data-value="18.33">$18.33</td>
+            <td class="money" data-value="18.33">$18.33/15GB</td>
             <td class="money" data-value="220">$220 flat</td>
             <td class="money" data-value="1.22">$1.22</td>
             <td class="bank-cap good" data-value="500">500GB</td>
-            <td data-value="1.7"><div class="rating-box"><span class="rating-sources"><a class="rating-pill rating-bad" href="https://www.productreview.com.au/listings/coles-mobile" target="_blank" rel="noopener"><span class="src-tag">PR</span>1.7★ <span class="n">403</span></a><a class="rating-pill rating-missing tp" href="https://au.trustpilot.com/search?query=Coles+Mobile" target="_blank" rel="noopener"><span class="src-tag">TP</span>0★ <span class="n">0</span></a></span><span class="rating-note">Activation delays up to ~2 weeks reported repeatedly; runs on a reduced-priority slice of the Optus network.</span></div></td>
+            <td data-value="1.7"><div class="rating-box"><span class="rating-sources"><a class="rating-pill rating-bad" href="https://www.productreview.com.au/listings/coles-mobile" target="_blank" rel="noopener" title="ProductReview"><span class="src-tag">PR</span>1.7★ <span class="n">403</span></a><a class="rating-pill rating-missing tp" href="https://au.trustpilot.com/search?query=Coles+Mobile" target="_blank" rel="noopener" title="Trustpilot"><span class="src-tag">TP</span>0★ <span class="n">0</span></a></span><span class="rating-note">Activation delays up to ~2 weeks reported repeatedly; runs on a reduced-priority slice of the Optus network.</span></div></td>
           </tr>
           <tr>
             <td class="provider-cell" data-value="Coles Mobile"><div class="provider-inner"><span class="logo-chip"><img src="images/logos/coles.png" alt="" loading="lazy"></span>
@@ -359,11 +380,11 @@
             <td data-value="Optus"><span class="net-btn net-optus-btn">Optus</span></td>
             <td data-value="$240 plan">$240 plan</td>
             <td class="num" data-value="240">240GB</td>
-            <td class="money" data-value="20.00">$20.00</td>
+            <td class="money" data-value="20.00">$20.00/20GB</td>
             <td class="money" data-value="240">$240 flat</td>
             <td class="money" data-value="1.00">$1.00</td>
             <td class="bank-cap good" data-value="500">500GB</td>
-            <td data-value="1.7"><div class="rating-box"><span class="rating-sources"><a class="rating-pill rating-bad" href="https://www.productreview.com.au/listings/coles-mobile" target="_blank" rel="noopener"><span class="src-tag">PR</span>1.7★ <span class="n">403</span></a><a class="rating-pill rating-missing tp" href="https://au.trustpilot.com/search?query=Coles+Mobile" target="_blank" rel="noopener"><span class="src-tag">TP</span>0★ <span class="n">0</span></a></span></div></td>
+            <td data-value="1.7"><div class="rating-box"><span class="rating-sources"><a class="rating-pill rating-bad" href="https://www.productreview.com.au/listings/coles-mobile" target="_blank" rel="noopener" title="ProductReview"><span class="src-tag">PR</span>1.7★ <span class="n">403</span></a><a class="rating-pill rating-missing tp" href="https://au.trustpilot.com/search?query=Coles+Mobile" target="_blank" rel="noopener" title="Trustpilot"><span class="src-tag">TP</span>0★ <span class="n">0</span></a></span></div></td>
           </tr>
           <tr>
             <td class="provider-cell" data-value="Coles Mobile"><div class="provider-inner"><span class="logo-chip"><img src="images/logos/coles.png" alt="" loading="lazy"></span>
@@ -371,11 +392,11 @@
             <td data-value="Optus"><span class="net-btn net-optus-btn">Optus</span></td>
             <td data-value="$280 plan">$280 plan</td>
             <td class="num" data-value="312">312GB</td>
-            <td class="money" data-value="23.33">$23.33</td>
+            <td class="money" data-value="23.33">$23.33/26GB</td>
             <td class="money" data-value="280">$280 flat</td>
             <td class="money" data-value="0.90">$0.90</td>
             <td class="bank-cap good" data-value="500">500GB</td>
-            <td data-value="1.7"><div class="rating-box"><span class="rating-sources"><a class="rating-pill rating-bad" href="https://www.productreview.com.au/listings/coles-mobile" target="_blank" rel="noopener"><span class="src-tag">PR</span>1.7★ <span class="n">403</span></a><a class="rating-pill rating-missing tp" href="https://au.trustpilot.com/search?query=Coles+Mobile" target="_blank" rel="noopener"><span class="src-tag">TP</span>0★ <span class="n">0</span></a></span></div></td>
+            <td data-value="1.7"><div class="rating-box"><span class="rating-sources"><a class="rating-pill rating-bad" href="https://www.productreview.com.au/listings/coles-mobile" target="_blank" rel="noopener" title="ProductReview"><span class="src-tag">PR</span>1.7★ <span class="n">403</span></a><a class="rating-pill rating-missing tp" href="https://au.trustpilot.com/search?query=Coles+Mobile" target="_blank" rel="noopener" title="Trustpilot"><span class="src-tag">TP</span>0★ <span class="n">0</span></a></span></div></td>
           </tr>
 
           <tr>
@@ -384,11 +405,11 @@
             <td data-value="Vodafone"><span class="net-btn net-vodafone-btn">Vodafone</span></td>
             <td data-value="Prepaid Plus SIM">Prepaid Plus SIM</td>
             <td class="num" data-value="204">204GB</td>
-            <td class="money" data-value="20.83">$20.83</td>
+            <td class="money" data-value="20.83">$20.83/17GB</td>
             <td class="money" data-value="250">$179 → $250</td>
             <td class="money" data-value="1.23">$1.23</td>
             <td class="bank-cap good" data-value="300">300GB</td>
-            <td data-value="1.5"><div class="rating-box"><span class="rating-sources"><a class="rating-pill rating-bad" href="https://www.productreview.com.au/listings/vodafone" target="_blank" rel="noopener"><span class="src-tag">PR</span>1.5★ <span class="n">3,505</span></a><a class="rating-pill rating-bad tp" href="https://au.trustpilot.com/review/www.vodafone.com.au" target="_blank" rel="noopener"><span class="src-tag">TP</span>1.5★ <span class="n">993</span></a></span><span class="rating-note">Billing errors, cancellation difficulty, and network black-spots dominate the reviews.</span></div></td>
+            <td data-value="1.5"><div class="rating-box"><span class="rating-sources"><a class="rating-pill rating-bad" href="https://www.productreview.com.au/listings/vodafone" target="_blank" rel="noopener" title="ProductReview"><span class="src-tag">PR</span>1.5★ <span class="n">3,505</span></a><a class="rating-pill rating-bad tp" href="https://au.trustpilot.com/review/www.vodafone.com.au" target="_blank" rel="noopener" title="Trustpilot"><span class="src-tag">TP</span>1.5★ <span class="n">993</span></a></span><span class="rating-note">Billing errors, cancellation difficulty, and network black-spots dominate the reviews.</span></div></td>
           </tr>
 
           <tr>
@@ -397,11 +418,11 @@
             <td data-value="Telstra"><span class="net-btn net-telstra-btn">Telstra</span></td>
             <td data-value="Long Life Plus 6mo">Long Life Plus 6mo</td>
             <td class="num" data-value="160">160GB</td>
-            <td class="money" data-value="15.00">$15.00</td>
+            <td class="money" data-value="15.00">$15.00/13GB</td>
             <td class="money" data-value="180">$180 flat</td>
             <td class="money" data-value="1.13">$1.13</td>
-            <td class="bank-cap none" data-value="0">no rollover (confirmed by CIS)</td>
-            <td data-value="1.4"><div class="rating-box"><span class="rating-sources"><a class="rating-pill rating-bad" href="https://www.productreview.com.au/listings/telstra-1" target="_blank" rel="noopener"><span class="src-tag">PR</span>1.4★ <span class="n">3,391</span></a><a class="rating-pill rating-bad tp" href="https://au.trustpilot.com/review/www.telstra.com.au" target="_blank" rel="noopener"><span class="src-tag">TP</span>1.4★ <span class="n">2,863</span></a></span><span class="rating-note">Worse-rated than every Telstra-network MVNO here. Same towers, worse reviews, worse $/GB.</span></div></td>
+            <td class="bank-cap none" data-value="0">no rollover</td>
+            <td data-value="1.4"><div class="rating-box"><span class="rating-sources"><a class="rating-pill rating-bad" href="https://www.productreview.com.au/listings/telstra-1" target="_blank" rel="noopener" title="ProductReview"><span class="src-tag">PR</span>1.4★ <span class="n">3,391</span></a><a class="rating-pill rating-bad tp" href="https://au.trustpilot.com/review/www.telstra.com.au" target="_blank" rel="noopener" title="Trustpilot"><span class="src-tag">TP</span>1.4★ <span class="n">2,863</span></a></span><span class="rating-note">Worse-rated than every Telstra-network MVNO here. Same towers, worse reviews, worse $/GB.</span></div></td>
           </tr>
           <tr>
             <td class="provider-cell" data-value="Telstra (direct)"><div class="provider-inner"><span class="logo-chip"><img src="images/logos/telstra.png" alt="" loading="lazy"></span>
@@ -409,11 +430,11 @@
             <td data-value="Telstra"><span class="net-btn net-telstra-btn">Telstra</span></td>
             <td data-value="Long Life Plus 12mo">Long Life Plus 12mo</td>
             <td class="num" data-value="330">330GB</td>
-            <td class="money" data-value="32.92">$32.92</td>
+            <td class="money" data-value="32.92">$32.92/28GB</td>
             <td class="money" data-value="395">$395 flat</td>
             <td class="money" data-value="1.20">$1.20</td>
-            <td class="bank-cap none" data-value="0">no rollover (confirmed by CIS)</td>
-            <td data-value="1.4"><div class="rating-box"><span class="rating-sources"><a class="rating-pill rating-bad" href="https://www.productreview.com.au/listings/telstra-1" target="_blank" rel="noopener"><span class="src-tag">PR</span>1.4★ <span class="n">3,391</span></a><a class="rating-pill rating-bad tp" href="https://au.trustpilot.com/review/www.telstra.com.au" target="_blank" rel="noopener"><span class="src-tag">TP</span>1.4★ <span class="n">2,863</span></a></span></div></td>
+            <td class="bank-cap none" data-value="0">no rollover</td>
+            <td data-value="1.4"><div class="rating-box"><span class="rating-sources"><a class="rating-pill rating-bad" href="https://www.productreview.com.au/listings/telstra-1" target="_blank" rel="noopener" title="ProductReview"><span class="src-tag">PR</span>1.4★ <span class="n">3,391</span></a><a class="rating-pill rating-bad tp" href="https://au.trustpilot.com/review/www.telstra.com.au" target="_blank" rel="noopener" title="Trustpilot"><span class="src-tag">TP</span>1.4★ <span class="n">2,863</span></a></span></div></td>
           </tr>
 
           <tr>
@@ -422,36 +443,11 @@
             <td data-value="Optus"><span class="net-btn net-optus-btn">Optus</span></td>
             <td data-value="365-Day Prepaid SIM">365-Day Prepaid SIM</td>
             <td class="num" data-value="260">260GB</td>
-            <td class="money" data-value="26.67">$26.67</td>
+            <td class="money" data-value="26.67">$26.67/22GB</td>
             <td class="money" data-value="320">$220 → $320</td>
             <td class="money" data-value="1.23">$1.23</td>
             <td class="bank-cap good" data-value="200">200GB</td>
-            <td data-value="1.3"><div class="rating-box"><span class="rating-sources"><a class="rating-pill rating-bad" href="https://www.productreview.com.au/listings/yes-optus-mobile" target="_blank" rel="noopener"><span class="src-tag">PR</span>1.3★ <span class="n">5,258</span></a><a class="rating-pill rating-bad tp" href="https://au.trustpilot.com/review/optus.com.au" target="_blank" rel="noopener"><span class="src-tag">TP</span>1.2★ <span class="n">2,516</span></a></span><span class="rating-note">Lowest-rated provider found in this entire search, direct or MVNO. Drops to 180GB from year 4 on early recharge.</span></div></td>
-          </tr>
-
-          <tr>
-            <td class="provider-cell" data-value="Telsim"><div class="provider-inner"><span class="logo-chip"><img src="images/logos/telsim.png" alt="" loading="lazy"></span>
-              <span class="pname"><a class="pname-link" href="https://www.telsim.com.au/" target="_blank" rel="noopener">Telsim</a><a class="plan-link" href="https://www.telsim.com.au/product-category/180-365-days-plans/" target="_blank" rel="noopener">view plan</a></span></div></td>
-            <td data-value="Telstra Wholesale"><span class="net-btn net-telstra-btn">Telstra Wholesale</span></td>
-            <td data-value="180-Day">180-Day</td>
-            <td class="num" data-value="125">125GB</td>
-            <td class="money" data-value="36.67">$36.67</td>
-            <td class="money" data-value="220">$220 flat</td>
-            <td class="money" data-value="1.76">$1.76</td>
-            <td class="bank-cap" data-value="-1">data banking (cap unspecified)</td>
-            <td data-value="4.5"><div class="rating-box"><span class="rating-sources"><a class="rating-pill rating-good" href="https://www.productreview.com.au/listings/telsim" target="_blank" rel="noopener"><span class="src-tag">PR</span>4.5★ <span class="n">491</span></a><a class="rating-pill rating-good tp" href="https://www.trustpilot.com/review/telsim.com.au" target="_blank" rel="noopener"><span class="src-tag">TP</span>4.3★ <span class="n">127</span></a></span><span class="rating-note">Strong on both fronts — one of the only providers here with genuinely good, real reviews rather than just "least bad." Telstra coverage praised; online ID verification can be a hurdle for self-service activation.</span></div></td>
-          </tr>
-          <tr>
-            <td class="provider-cell" data-value="Telsim"><div class="provider-inner"><span class="logo-chip"><img src="images/logos/telsim.png" alt="" loading="lazy"></span>
-              <span class="pname"><a class="pname-link" href="https://www.telsim.com.au/" target="_blank" rel="noopener">Telsim</a><a class="plan-link" href="https://www.telsim.com.au/product-category/180-365-days-plans/" target="_blank" rel="noopener">view plan</a></span></div></td>
-            <td data-value="Telstra Wholesale"><span class="net-btn net-telstra-btn">Telstra Wholesale</span></td>
-            <td data-value="365-Day">365-Day</td>
-            <td class="num" data-value="260">260GB</td>
-            <td class="money" data-value="27.50">$27.50</td>
-            <td class="money" data-value="330">$330 flat</td>
-            <td class="money" data-value="1.27">$1.27</td>
-            <td class="bank-cap" data-value="-1">data banking (cap unspecified)</td>
-            <td data-value="4.5"><div class="rating-box"><span class="rating-sources"><a class="rating-pill rating-good" href="https://www.productreview.com.au/listings/telsim" target="_blank" rel="noopener"><span class="src-tag">PR</span>4.5★ <span class="n">491</span></a><a class="rating-pill rating-good tp" href="https://www.trustpilot.com/review/telsim.com.au" target="_blank" rel="noopener"><span class="src-tag">TP</span>4.3★ <span class="n">127</span></a></span></div></td>
+            <td data-value="1.3"><div class="rating-box"><span class="rating-sources"><a class="rating-pill rating-bad" href="https://www.productreview.com.au/listings/yes-optus-mobile" target="_blank" rel="noopener" title="ProductReview"><span class="src-tag">PR</span>1.3★ <span class="n">5,258</span></a><a class="rating-pill rating-bad tp" href="https://au.trustpilot.com/review/optus.com.au" target="_blank" rel="noopener" title="Trustpilot"><span class="src-tag">TP</span>1.2★ <span class="n">2,516</span></a></span><span class="rating-note">Lowest-rated provider found in this entire search, direct or MVNO. Drops to 180GB from year 4 on early recharge.</span></div></td>
           </tr>
 
           <tr>
@@ -460,14 +456,16 @@
             <td data-value="Telstra"><span class="net-btn net-telstra-btn">Telstra</span></td>
             <td data-value="365-Day">365-Day</td>
             <td class="num" data-value="264">264GB</td>
-            <td class="money" data-value="21.58">$21.58</td>
+            <td class="money" data-value="21.58">$21.58/22GB</td>
             <td class="money" data-value="259">$259 flat</td>
             <td class="money" data-value="0.98">$0.98</td>
             <td class="bank-cap good" data-value="500">500GB</td>
-            <td data-value="2.5"><div class="rating-box"><span class="rating-sources"><a class="rating-pill rating-missing" href="https://www.productreview.com.au/listings/konec-australia" target="_blank" rel="noopener"><span class="src-tag">PR</span>2.5★ <span class="n">2</span></a><a class="rating-pill rating-missing tp" href="https://au.trustpilot.com/search?query=Konec+Mobile" target="_blank" rel="noopener"><span class="src-tag">TP</span>0★ <span class="n">0</span></a></span><span class="rating-note">Only 2 ProductReview reviews and no Trustpilot listing — too thin a sample to trust either way. Not flagged in TIO/ACMA complaint data, a mild positive, but worth a fresh personal check before buying.</span></div></td>
+            <td data-value="2.5"><div class="rating-box"><span class="rating-sources"><a class="rating-pill rating-missing" href="https://www.productreview.com.au/listings/konec-australia" target="_blank" rel="noopener" title="ProductReview"><span class="src-tag">PR</span>2.5★ <span class="n">2</span></a><a class="rating-pill rating-missing tp" href="https://au.trustpilot.com/search?query=Konec+Mobile" target="_blank" rel="noopener" title="Trustpilot"><span class="src-tag">TP</span>0★ <span class="n">0</span></a></span><span class="rating-note">Only 2 ProductReview reviews and no Trustpilot listing — too thin a sample to trust either way. Not flagged in TIO/ACMA complaint data, a mild positive, but worth a fresh personal check before buying.</span></div></td>
           </tr>
 
-        </tbody>
+        
+
+</tbody>
       </table>
     </div>
   </section>
@@ -531,6 +529,7 @@
       <li><a href="https://au.trustpilot.com/review/www.telstra.com.au" target="_blank" rel="noopener">Trustpilot — Telstra Mobile</a></li>
       <li><a href="https://au.trustpilot.com/review/optus.com.au" target="_blank" rel="noopener">Trustpilot — Optus Mobile</a></li>
       <li><a href="https://www.trustpilot.com/review/telsim.com.au" target="_blank" rel="noopener">Trustpilot — Telsim</a></li>
+      <li><a href="https://www.telsim.com.au/critical-information-summary/telsim-prepaid-plans/" target="_blank" rel="noopener">Telsim — Prepaid Plans CIS (data banking cap)</a></li>
     </ul>
 
     <h4 class="sources-head">Also checked, not cited above</h4>
