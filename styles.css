@@ -578,12 +578,17 @@
     break-inside: avoid;
   }
   footer h4.sources-head { margin-top: 4px; }
+  footer ul + h4.sources-head { margin-top: 36px; }
 
   @media (min-width: 861px) {
     footer ul + h4.sources-head {
-      margin-top: 36px;
       padding-top: 28px;
     }
+
+    /* even out eyebrow / h1 / intro / meta-line spacing (uneven due to margin collapsing) */
+    h1 { margin-bottom: 30px; }
+    .intro { margin-bottom: 30px; }
+    .meta-line { margin-top: 0; }
   }
 
   @media (max-width: 860px) {
@@ -694,7 +699,7 @@
     tbody td:nth-child(2)::before { content: "Network"; }
     tbody td:nth-child(3)::before { content: "Plan tier"; }
     tbody td:nth-child(4)::before { content: "Total data"; }
-    tbody td:nth-child(5)::before { content: "$/Month"; }
+    tbody td:nth-child(5)::before { content: "~$/Month"; }
     tbody td:nth-child(6)::before { content: "Price (now \2192 renew)"; }
     tbody td:nth-child(7)::before { content: "$/GB"; }
     tbody td:nth-child(8)::before { content: "Data banking cap"; }
@@ -703,4 +708,29 @@
 
   @media (prefers-reduced-motion: reduce) {
     * { scroll-behavior: auto !important; }
+  }
+
+  .site-credit {
+    position: fixed;
+    right: 14px;
+    bottom: 10px;
+    z-index: 10;
+    font-size: 11px;
+    line-height: 1;
+    color: var(--ink-muted);
+    background: var(--surface);
+    padding: 5px 9px;
+    border-radius: 6px;
+    border: 1px solid var(--rule);
+    box-shadow: var(--shadow);
+    white-space: nowrap;
+  }
+  .site-credit a {
+    color: var(--accent-strong);
+    text-decoration: none;
+  }
+  .site-credit a:hover { text-decoration: underline; }
+  .site-credit a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
   }

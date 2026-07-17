@@ -104,3 +104,8 @@
     mobileQuery.addListener(mergeRatingColumn);
   }
 })();
+
+(function () {
+  var yearEl = document.getElementById('credit-year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+})();
