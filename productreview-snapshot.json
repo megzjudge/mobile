@@ -1,39 +1,39 @@
 {
   "aldi-mobile": {
     "rating": 1.9,
-    "reviews": 2318
+    "reviews": 2324
   },
   "amaysim": {
     "rating": 2.9,
-    "reviews": 3523
+    "reviews": 3534
   },
   "boost-mobile": {
     "rating": 1.9,
-    "reviews": 1691
+    "reviews": 1701
   },
   "coles-mobile": {
-    "rating": 1.8,
-    "reviews": 405
+    "rating": 1.9,
+    "reviews": 418
   },
   "everyday-mobile-from-woolworths": {
-    "rating": 2.1,
-    "reviews": 1334
+    "rating": 2.0,
+    "reviews": 1338
   },
   "kogan-mobile": {
     "rating": 4.0,
-    "reviews": 3240
+    "reviews": 3270
   },
   "lebara-mobile": {
     "rating": 2.0,
-    "reviews": 779
+    "reviews": 781
   },
   "lycamobile": {
-    "rating": 2.2,
-    "reviews": 1716
+    "rating": 2.1,
+    "reviews": 1728
   },
   "onepass-mobile": {
-    "rating": 1.7,
-    "reviews": 374
+    "rating": 1.8,
+    "reviews": 380
   },
   "telechoice-mobile": {
     "rating": 2.2,
@@ -41,14 +41,14 @@
   },
   "telstra-1": {
     "rating": 1.4,
-    "reviews": 3400
+    "reviews": 3410
   },
   "vodafone": {
     "rating": 1.5,
-    "reviews": 3523
+    "reviews": 3525
   },
   "yes-optus-mobile": {
     "rating": 1.3,
-    "reviews": 5272
+    "reviews": 5280
   }
 }
